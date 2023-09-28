@@ -1,0 +1,59 @@
+-- Finally block is generally used to cleanup the code.Whether the exxception raised or handled the finally block 
+execute compulsary which is generally used to close the resource.
+
+-- At version 1.6 whatever connection/resource that you opened in try block like database connection or FileReader 
+or Filewriter or Network Connection then compulsary we should close in finally block.
+
+until 1.6v
+----------
+BufferedReader br=null;
+try{
+   br=new BufferedReader(new FileReader("abc.txt");
+   //use br basedon your requirements;
+   }catch(IOException e){
+      //Handling code;
+      }
+   finally{
+   if(br!=null){
+   br.close();
+   }
+   }
+   
+Problems in 1.6v  
+----------------
+1. Whatever resource that you opened in try block that we "must" close in finally block(mandatory action to the programmer)
+   Complexity increases here
+2. Here wemust write the finally block whenever we use resource in try block
+   So length of the code increases and Readability is decreases
+
+
+*** Try with Resources **** (1.7V)
+-------------------------
+
+- It came in 1.7V to overcome the problems in java1.6
+try(r){
+r--resource
+}
+catch(Ex e){
+}
+
+- Here whatever resource that we used in try that is automatically closed when it reaches end of the try block then no need to 
+write the finally block 
+try(BufferedReader br=new BufferedReader(new FileReader("abc.txt")){
+}
+
+
+
+
+
+*** In 1.9V ***
+
+Here we use the already existed resource or multiple resource in try
+MyResource r1=new MyResource();
+MyResource r2=new MyResource();
+MyResource r3=new MyResource();
+try(r1;r2;r3){
+
+
+
+ 

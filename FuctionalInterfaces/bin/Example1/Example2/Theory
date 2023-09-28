@@ -1,0 +1,34 @@
+Developer no need to worry about the creation of functioal interfaces
+under java.util.function we have some predefined functional Interfaces are there.There are 53 functional Interfacesare there.These 53 are broadly classified into 4 categories
+
+These are maximum used in stream API's
+
+1.Supplier :  T -get()  It returns a value but not accept any parameter
+
+
+
+
+
+
+2.Consumer  :   void accept(T t)
+
+
+BiConsumer<T,U>  :  void accept(T,U) --- T is 1st parameter type and U is 2nd parameter type
+
+
+
+
+
+3.Predicate  :   boolean test(T t)  -- It is used to test the input and return boolean
+
+
+
+
+
+
+
+4.Function : R apply(T t)  --- It takes input and convert into some other output
+Function<T,R>
+
+
+BiFunction<R,T1,T2) --- R apply(T1 t1,T2 t2);
